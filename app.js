@@ -17,9 +17,10 @@ class Occasion {
             this.passed = false
         }
     }
+}
 //Next is the modal for editing and deleting
 createApp({
-    setup() {
+    setup(){
         
         const occasions = ref([new Occasion("title", "date", "description")])
         const title = ref("")
@@ -33,7 +34,7 @@ createApp({
         function loadAll() {
             let storage = window.localStorage
             
-            occasions.value = JSON.parse(storage.getItem("occasions")) || []
+            occasions.value = JSON.parse(storage.getItem("occasions")) ?? []
               
         }
         loadAll()
