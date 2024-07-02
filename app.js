@@ -26,14 +26,12 @@ createApp({
         const title = ref("")
         const date = ref("")
         const description = ref("")
+        const storage = window.localStorage
         
         function saveAll() {
-            let storage = window.localStorage
             storage.setItem("occasions", JSON.stringify(occasions.value));
         }
         function loadAll() {
-            let storage = window.localStorage
-            
             occasions.value = JSON.parse(storage.getItem("occasions")) ?? []
               
         }
